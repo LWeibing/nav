@@ -1,0 +1,177 @@
+/* css reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::after {
+  box-sizing: border-box;
+}
+*::before {
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+a {
+  text-decoration: none;
+  color: initial;
+}
+/* style */
+body {
+  background-color: #eeeeee;
+}
+.globalHeader {
+  margin: 20px;
+}
+@media (min-width: 500px) {
+  .searchFrom {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 80px;
+  }
+}
+.searchFrom {
+  display: flex;
+  justify-content: space-between;
+}
+.searchFrom > input {
+  width: 100%;
+  margin-right: 20px;
+  border: none;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 3px #999999;
+}
+.searchFrom > button {
+  white-space: nowrap;
+  height: 40px;
+  padding: 0 28px;
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  background-color: #ff7f62;
+  font-size: 16px;
+  box-shadow: 3px 3px 3px #999999;
+}
+@media (min-width: 500px) {
+  .globalMain {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.siteList {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (min-width: 500px) {
+  .siteList {
+    margin-left: 0;
+    margin-right: -50px;
+    justify-content: flex-start;
+  }
+}
+.siteList > li {
+  margin-bottom: 10px;
+}
+@media (min-width: 500px) {
+  .siteList > li {
+    margin-right: 50px;
+  }
+}
+.siteList .site {
+  width: 160px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 3px 3px 3px #999999;
+  position: relative;
+}
+@media (min-width: 500px) {
+  .siteList .site {
+    box-shadow: none;
+    transition: all 0.3s;
+  }
+  .siteList .site:hover {
+    box-shadow: 6px 6px 6px #999999;
+    cursor: pointer;
+  }
+}
+.siteList .site > .logoBox {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.siteList .site > .logoBox > .logo {
+  width: 80%;
+}
+.siteList .site > .link {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.siteList .site .close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+@media (min-width: 500px) {
+  .siteList .site .close {
+    display: none;
+  }
+  .siteList .site:hover .close {
+    display: block;
+    cursor: default;
+  }
+}
+.addButton {
+  width: 160px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 3px 3px 3px #999999;
+}
+@media (min-width: 500px) {
+  .siteList .addButton {
+    box-shadow: none;
+    transition: all 0.3s;
+  }
+  .siteList .addButton:hover {
+    box-shadow: 6px 6px 6px #999999;
+  }
+}
+.addButton .iconBox {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addButton .iconBox > .icon {
+  width: 40px;
+  height: 40px;
+}
+.addButton .iconText {
+  margin-top: 10px;
+  font-size: 14px;
+}
