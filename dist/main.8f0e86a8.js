@@ -137,7 +137,7 @@ var render = function render() {
   hashMap.forEach(function (node, index) {
     var $li = $("\n        <li>\n            <div class=\"site\">\n              <div class=\"logoBox\">\n                <img class=\"logo\" src=\"".concat(node.url, "/favicon.ico\" />\n              </div>\n              <div class=\"link\">").concat(simplifyUrl(node.url), "</div>\n              <div class=\"close\">\n              <svg class=\"icon\">\n                <use xlink:href=\"#icon-close\"></use>\n              </svg>\n              </div>\n            </div>\n        </li>\n        ")).insertBefore($lastSite);
     $li.on("click", function () {
-      window.open(node.url);
+      window.location.href = node.url;
     });
     $li.on("click", ".close", function (e) {
       e.stopPropagation();
@@ -166,4 +166,4 @@ window.onbeforeunload = function () {
   localStorage.setItem("website", string);
 };
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.2de543b5.js.map
+//# sourceMappingURL=main.8f0e86a8.js.map

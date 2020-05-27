@@ -32,7 +32,7 @@ const render = () => {
         </li>
         `).insertBefore($lastSite);
     $li.on("click", () => {
-      window.open(node.url);
+      window.location.href = node.url;
     });
     $li.on("click", ".close", (e) => {
       e.stopPropagation();
