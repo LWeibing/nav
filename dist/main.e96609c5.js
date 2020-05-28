@@ -132,18 +132,14 @@ var hashMap = xObject || [{
   url: "https://www.nowcoder.com"
 }];
 
-var simplifyUrl1 = function simplifyUrl1(url) {
+var simplifyUrl = function simplifyUrl(url) {
   return url.replace("https://", "").replace("http://", "").replace("www.", "").replace(/\/.*/, "");
-};
-
-var simplifyUrl2 = function simplifyUrl2(url) {
-  return url.replace(/\/.*/, "");
 };
 
 var render = function render() {
   $siteList.find("li:not(.last)").remove();
   hashMap.forEach(function (node, index) {
-    var $li = $("\n        <li>\n            <div class=\"site\">\n              <div class=\"logoBox\">\n                <img class=\"logo\" src=\"".concat(simplifyUrl2(node.url), "/favicon.ico\" />\n              </div>\n              <div class=\"link\">").concat(simplifyUrl1(node.url), "</div>\n              <div class=\"number\">").concat(index + 1, "</div>\n              <div class=\"close\">\n              <svg class=\"icon\">\n                <use xlink:href=\"#icon-close\"></use>\n              </svg>\n              </div>\n            </div>\n        </li>\n        ")).insertBefore($lastSite);
+    var $li = $("\n        <li>\n            <div class=\"site\">\n              <div class=\"logoBox\">\n                <img class=\"logo\" src=\"//www.".concat(simplifyUrl(node.url), "/favicon.ico\" />\n              </div>\n              <div class=\"link\">").concat(simplifyUrl(node.url), "</div>\n              <div class=\"number\">").concat(index + 1, "</div>\n              <div class=\"close\">\n              <svg class=\"icon\">\n                <use xlink:href=\"#icon-close\"></use>\n              </svg>\n              </div>\n            </div>\n        </li>\n        ")).insertBefore($lastSite);
     $li.on("click", function () {
       window.location.href = node.url;
     });
@@ -185,4 +181,4 @@ $(document).on("keypress", function (e) {
   }
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.48eae0b1.js.map
+//# sourceMappingURL=main.e96609c5.js.map
