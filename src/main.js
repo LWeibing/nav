@@ -8,12 +8,15 @@ const hashMap = xObject || [
   { url: "http://www.jq22.com" },
   { url: "https://www.nowcoder.com" },
 ];
-const simplifyUrl = (url) => {
+const simplifyUrl1 = (url) => {
   return url
     .replace("https://", "")
     .replace("http://", "")
     .replace("www.", "")
     .replace(/\/.*/, "");
+};
+const simplifyUrl2 = (url) => {
+  return url.replace(/\/.*/, "");
 };
 const render = () => {
   $siteList.find("li:not(.last)").remove();
@@ -22,9 +25,9 @@ const render = () => {
         <li>
             <div class="site">
               <div class="logoBox">
-                <img class="logo" src="${simplifyUrl(node.url)}/favicon.ico" />
+                <img class="logo" src="${simplifyUrl2(node.url)}/favicon.ico" />
               </div>
-              <div class="link">${simplifyUrl(node.url)}</div>
+              <div class="link">${simplifyUrl1(node.url)}</div>
               <div class="number">${index + 1}</div>
               <div class="close">
               <svg class="icon">
