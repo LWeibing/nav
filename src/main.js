@@ -22,7 +22,7 @@ const render = () => {
         <li>
             <div class="site">
               <div class="logoBox">
-                <img class="logo" src="${node.url}/favicon.ico" />
+                <img class="logo" src="${simplifyUrl(node.url)}/favicon.ico" />
               </div>
               <div class="link">${simplifyUrl(node.url)}</div>
               <div class="number">${index + 1}</div>
