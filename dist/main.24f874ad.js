@@ -126,16 +126,20 @@ var hashMap = xObject || [{
   url: "https://css-tricks.com"
 }, {
   url: "https://juejin.im"
+}, {
+  url: "http://www.jq22.com"
+}, {
+  url: "https://www.nowcoder.com"
 }];
 
 var simplifyUrl = function simplifyUrl(url) {
-  return url.replace("https://", "").replace("http://", "").replace("www", "").replace(/\/.*/, "");
+  return url.replace("https://", "").replace("http://", "").replace("www.", "").replace(/\/.*/, "");
 };
 
 var render = function render() {
   $siteList.find("li:not(.last)").remove();
   hashMap.forEach(function (node, index) {
-    var $li = $("\n        <li>\n            <div class=\"site\">\n              <div class=\"logoBox\">\n                <img class=\"logo\" src=\"".concat(node.url, "/favicon.ico\" />\n              </div>\n              <div class=\"link\">").concat(simplifyUrl(node.url), "</div>\n              <div class=\"close\">\n              <svg class=\"icon\">\n                <use xlink:href=\"#icon-close\"></use>\n              </svg>\n              </div>\n            </div>\n        </li>\n        ")).insertBefore($lastSite);
+    var $li = $("\n        <li>\n            <div class=\"site\">\n              <div class=\"logoBox\">\n                <img class=\"logo\" src=\"".concat(node.url, "/favicon.ico\" />\n              </div>\n              <div class=\"link\">").concat(simplifyUrl(node.url), "</div>\n              <div class=\"number\">").concat(index + 1, "</div>\n              <div class=\"close\">\n              <svg class=\"icon\">\n                <use xlink:href=\"#icon-close\"></use>\n              </svg>\n              </div>\n            </div>\n        </li>\n        ")).insertBefore($lastSite);
     $li.on("click", function () {
       window.location.href = node.url;
     });
@@ -165,5 +169,16 @@ window.onbeforeunload = function () {
   var string = JSON.stringify(hashMap);
   localStorage.setItem("website", string);
 };
+
+$(document).on("keypress", function (e) {
+  var key = e.key;
+  var number = $(".number").text().split("");
+
+  for (var i = 0; i < number.length; i++) {
+    if (number[i] === key) {
+      window.location.href = hashMap[i].url;
+    }
+  }
+});
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.8f0e86a8.js.map
+//# sourceMappingURL=main.24f874ad.js.map

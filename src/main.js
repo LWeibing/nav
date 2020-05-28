@@ -5,12 +5,14 @@ const xObject = JSON.parse(web);
 const hashMap = xObject || [
   { url: "https://css-tricks.com" },
   { url: "https://juejin.im" },
+  { url: "http://www.jq22.com" },
+  { url: "https://www.nowcoder.com" },
 ];
 const simplifyUrl = (url) => {
   return url
     .replace("https://", "")
     .replace("http://", "")
-    .replace("www", "")
+    .replace("www.", "")
     .replace(/\/.*/, "");
 };
 const render = () => {
@@ -23,6 +25,7 @@ const render = () => {
                 <img class="logo" src="${node.url}/favicon.ico" />
               </div>
               <div class="link">${simplifyUrl(node.url)}</div>
+              <div class="number">${index + 1}</div>
               <div class="close">
               <svg class="icon">
                 <use xlink:href="#icon-close"></use>
@@ -47,7 +50,9 @@ $(".addButton").on("click", () => {
   if (url.indexOf("http") !== 0) {
     url = "https://" + url;
   }
-  hashMap.push({ url: url });
+  hashMap.push({
+    url: url,
+  });
   render();
 });
 
@@ -55,3 +60,12 @@ window.onbeforeunload = () => {
   const string = JSON.stringify(hashMap);
   localStorage.setItem("website", string);
 };
+$(document).on("keypress", (e) => {
+  let { key } = e;
+  const number = $(".number").text().split("");
+  for (let i = 0; i < number.length; i++) {
+    if (number[i] === key) {
+      window.location.href = hashMap[i].url;
+    }
+  }
+});

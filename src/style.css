@@ -29,6 +29,11 @@ body {
 .globalHeader {
   margin: 20px;
 }
+
+.searchFrom {
+  display: flex;
+  justify-content: space-between;
+}
 @media (min-width: 500px) {
   .searchFrom {
     max-width: 600px;
@@ -38,10 +43,6 @@ body {
     margin-bottom: 80px;
   }
 }
-.searchFrom {
-  display: flex;
-  justify-content: space-between;
-}
 .searchFrom > input {
   width: 100%;
   margin-right: 20px;
@@ -50,6 +51,7 @@ body {
   padding: 0 10px;
   border-radius: 6px;
   box-shadow: 3px 3px 3px #999999;
+  outline: none;
 }
 .searchFrom > button {
   white-space: nowrap;
@@ -61,6 +63,8 @@ body {
   background-color: #ff7f62;
   font-size: 16px;
   box-shadow: 3px 3px 3px #999999;
+  outline: none;
+  cursor: pointer;
 }
 @media (min-width: 500px) {
   .globalMain {
@@ -88,6 +92,7 @@ body {
 @media (min-width: 500px) {
   .siteList > li {
     margin-right: 50px;
+    margin-bottom: 50px;
   }
 }
 .siteList .site {
@@ -126,10 +131,17 @@ body {
   margin-top: 10px;
   font-size: 14px;
 }
+.siteList .site .number {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  color: #e0e0e0;
+  font-size: 12px;
+}
 .siteList .site .close {
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: 6px;
+  right: 6px;
 }
 @media (min-width: 500px) {
   .siteList .site .close {
@@ -175,4 +187,19 @@ body {
 .addButton .iconText {
   margin-top: 10px;
   font-size: 14px;
+}
+.globalFooter {
+  display: none;
+}
+@media (min-width: 500px) {
+  .globalFooter {
+    padding-left: 10px;
+    display: block;
+    width: 100%;
+    color: #eeeeee;
+    font-size: 14px;
+    background-color: #bbbbbb;
+    position: fixed;
+    bottom: 0;
+  }
 }
