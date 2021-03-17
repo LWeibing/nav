@@ -27,7 +27,7 @@ body {
   background-color: #eeeeee;
 }
 .globalHeader {
-  margin: 20px;
+  margin: 30px;
 }
 
 .searchFrom {
@@ -74,7 +74,7 @@ body {
   }
 }
 .siteList {
-  margin: 20px;
+  margin: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -96,19 +96,24 @@ body {
   }
 }
 .siteList .site {
-  width: 160px;
+  width: 140px;
   background-color: #ffffff;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 3px 3px 3px #999999;
   position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 @media (min-width: 500px) {
   .siteList .site {
+    width: 160px;
+    padding: 20px;
     box-shadow: none;
     transition: all 0.3s;
   }
@@ -153,18 +158,20 @@ body {
   }
 }
 .addButton {
-  width: 160px;
+  width: 140px;
   background-color: #ffffff;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 3px 3px 3px #999999;
 }
 @media (min-width: 500px) {
   .siteList .addButton {
+    width: 160px;
+    padding: 20px;
     box-shadow: none;
     transition: all 0.3s;
   }
@@ -205,4 +212,4 @@ body {
 }
 
 
-/*# sourceMappingURL=style.56175392.css.map */
+/*# sourceMappingURL=style.053e56e1.css.map */
